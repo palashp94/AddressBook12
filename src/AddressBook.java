@@ -81,6 +81,7 @@ public class AddressBook {
             System.out.println("Contact Number Not found ");
         }
     }
+
     public void deleteContact() {
         System.out.println("Enter the first name");
         String firstName = sc.next();
