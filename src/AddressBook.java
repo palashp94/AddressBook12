@@ -4,12 +4,11 @@ import java.util.Scanner;
 public class AddressBook {
 
     ArrayList<Contacts> list = new ArrayList<Contacts>();
+    Scanner sc = new Scanner(System.in);
 
     public void addContacts() {
 
         Contacts contacts = new Contacts();
-        Scanner sc = new Scanner(System.in);
-
         System.out.println("Enter the Contact details");
 
         System.out.println("Enter the First Name :");
@@ -39,7 +38,6 @@ public class AddressBook {
         list.add(contacts);
     }
 
-    //Method to Show the Contact Details
     public void showContacts() {
         for (Contacts contacts : list) {
             System.out.println("Contact Details -");
@@ -52,7 +50,35 @@ public class AddressBook {
             System.out.println("Phone Number : " + contacts.getPhoneNumber());
             System.out.println("EMail ID : " + contacts.getEmail());
         }
-
     }
+    public void editContacts() {
 
+        System.out.println("Enter the first name");
+        String firstName = sc.next();
+
+        boolean isAvailable = false;
+        for (Contacts contacts : list) {
+            if (firstName.equalsIgnoreCase(contacts.getFirstName())) {
+                isAvailable = true;
+                System.out.println("Enter the Last Name :");
+                contacts.setLastName(sc.next());
+                System.out.println("Enter the Address :");
+                contacts.setAddress(sc.next());
+                System.out.println("Enter the City :");
+                contacts.setCity(sc.next());
+                System.out.println("Enter the State :");
+                contacts.setState(sc.next());
+                System.out.println("Enter the Zip Code :");
+                contacts.setZip(sc.next());
+                System.out.println("Enter the Phone Number :");
+                contacts.setPhoneNumber(sc.next());
+                System.out.println("Enter the EMail ID :");
+                contacts.setEmail(sc.next());
+                break;
+            }
+        }
+        if (!isAvailable) {
+            System.out.println("Contact Number Not found ");
+        }
+    }
 }

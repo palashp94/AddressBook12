@@ -61,7 +61,7 @@ public class Contacts {
                 return phonenumber;
         }
 
-        public void setPhoneNumber(String phonenumber) {
+        public void setPhoneNumber(String phoneNumber) {
                 this.phonenumber = phonenumber;
         }
 
@@ -73,4 +73,5 @@ public class Contacts {
                 this.email = email;
         }
 }
+
 
